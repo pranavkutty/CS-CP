@@ -2,12 +2,6 @@
 
 unordered_map<int,int> m;        // element to index mapping
 
-bool isSafe(int pLeft, int pRight,int iLeft, int iRight, int n){
-    if(pLeft>=n || pRight>=n || iLeft>=n || iRight>=n || pLeft<0 || pRight<0 || iLeft<0 || iRight<0)
-        return false;
-    return true;
-}
-
 TreeNode* buildTreeHelper(vector<int> &preorder, vector<int> &inorder, int pLeft, int pRight, int iLeft, int iRight){
     
     // if(!isSafe(pLeft,pRight,iLeft,iRight,preorder.size()))
