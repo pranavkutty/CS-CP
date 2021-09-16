@@ -52,3 +52,29 @@ bool isCompleteTree(TreeNode* root) {
     
     return true;
 }
+
+// Balanced binary tree
+int checkHeight(TreeNode* root, bool &res){
+    if(root==NULL){
+        return 0;
+    }
+    int l = checkHeight(root->left,res);
+    int r = checkHeight(root->right,res);
+    
+    if(res==false)
+        return -1;
+    else if(abs(l-r)>1){
+        res = false;
+        return -1;
+    }
+    else
+        return max(l,r)+1;
+}
+
+bool isBalanced(TreeNode* root) {
+    bool res = true;
+    
+    checkHeight(root,res);
+    
+    return res;
+}
